@@ -1,0 +1,30 @@
+<div class="row box" id="div_work_{{localCounter}}" >
+    <div class="col-md-3 text-center ">
+
+
+        <label for="selectType" style="margin-top: 10px">Tipo</label>
+        <select id="selectType" class="form-control" ng-model="typeSelected">
+            <option ng-repeat="type in resultWorksType"  value="{{type.id}}">
+                {{type.type}}
+            </option>
+        </select>
+
+
+
+        <img class="margin_top20" style="width:200px; height:200px;" ng-src="{{newImageSrc}}" />
+        <label class="btn btn-primary btn-lg buttonUpload" for="id_file{{localCounter}}">Modifica Immagine </label>
+        <input id="id_file{{localCounter}}"  type="file" ng-file-select="onFileSelect($files)" ng-model="newImageSrc" style="display: none" >
+
+    </div>
+    <div class="col-md-6 " style="margin-top: 150px">
+        <div class="description">
+            <label for="inputTitle">Titolo</label>
+            <input type="text" class="form-control" id="inputTitle" placeholder="Titolo" ng-model="newTitle"  >
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg " style="margin-top: 20px" ng-click="addWork(newImageSrc,typeSelected,newTitle)">Aggiungi</button>
+        <button type="button" class="btn btn-danger btn-lg " style="margin-top: 20px" ng-click="removeDiv(localCounter)">Rimuovi</button>
+        <div id="bottomDiv"></div>
+    </div>
+
+</div>

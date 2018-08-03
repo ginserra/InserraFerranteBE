@@ -1,0 +1,106 @@
+<!-- about.html -->
+<div class="main_about text-center" style="overflow: hidden ">
+    <h2 class="text-center">Modifica la sezione Works</h2>
+
+    <p>Puoi modificare o aggiungere works</p>
+    <p>Le immagini che selezioni devono essere in un formato  <b>16/9</b></p>
+
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6">
+                <label for="fewDescription">Breve Descrizione</label>
+                <textarea id="fewDescription" class="form-control" rows="3" ng-model="description"></textarea>
+            </div>
+            <div class="col-md-2 fewDescription">
+                <button type="button" class="btn btn-primary btn-lg" ng-click="updateDescription()">Modifica</button>
+            </div>
+        </div>
+
+        <div class="row box" text-center>
+            <h4>Tipi di WORKS</h4>
+            <div class="col-md-3 text-center ">
+            </div>
+
+            <div class="col-md-6 text-center ">
+
+                <div class="input-group" ng-repeat="type in resultWorksType" >
+             <span class="input-group-addon" ng-click="showIcons($event,type)" style="min-width: 50px">
+                     <i id="id_icon_{{type.id}}" class="fa {{type.icon}}"></i>
+             </span>
+
+                    <input id="id_type_{{type.id}}" type="text" class="form-control" aria-label="..." value="{{type.type}}">
+                    <span class="input-group-addon"><i  ng-click="removeType(type)" class="fa fa-close"></i></span>
+                </div>
+                <div style="margin-top: 10px;">
+                    <button type="button" class="btn btn-primary btn-lg" ng-click="updateTypes()">Salva</button>
+                    <button type="button" class="btn btn-primary btn-lg" ng-click="addNewType()">Aggiungi Nuovo tipo</button>
+                </div>
+
+            </div>
+
+            <div class="col-md-3 text-center ">
+            </div>
+
+
+        </div>
+
+        <div class="row"  style="margin-top: 10px;margin-bottom: 10px">
+            <div class="col-md-3 text-center ">
+                <label for="selectTypeFilter" style="margin-top: 10px;margin-right: 5px">Filtra per tipo</label>
+                <select id="selectTypeFilter" class="form-control selectType" ng-model="filterSelected" ng-change="filterWorks(filterSelected)" >
+                    <option ng-repeat="type in resultWorksType"  value="{{type.id}}">
+                        {{type.type}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-6 text-center ">
+                <h4>Lista WORKS</h4>
+            </div>
+            <div class="col-md-3 text-center ">
+                <button style="margin-top: 10px;" class="btn  btn-primary btn-lg" ng-click="addDiv()"><i class="fa fa-plus mr-2"></i> Aggiungi Work</button>
+            </div>
+
+        </div>
+
+
+            <div  ng-repeat="work in resultWorks track by $index" class="row box">
+
+                <div class="col-md-3 text-center ">
+
+
+                    <label for="selectType" style="margin-top: 10px">Tipo</label>
+                    <select id="selectType" class="form-control" ng-model="typeSelected[$index]" >
+                        <option ng-repeat="type in resultWorksType"  value="{{type.id}}">
+                            {{type.type}}
+                        </option>
+                    </select>
+
+
+
+                    <img class="margin_top20" style="width:200px; height:200px;" ng-src="{{imageSrc[$index]}}" />
+                    <label class="btn btn-primary btn-lg buttonUpload" for="id_file{{::$id}}">Modifica Immagine </label>
+                    <input id="id_file{{::$id}}"  type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc[$index]" style="display: none" >
+
+                </div>
+                <div class="col-md-6 " style="margin-top: 150px">
+                    <div class="description">
+                        <label for="inputTitle">Titolo</label>
+                        <input type="text" class="form-control" id="inputTitle" placeholder="Titolo" ng-model="title" ng-value="work.title"  >
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg " style="margin-top: 20px" ng-click="updateWork(work.id,imageSrc[$index],typeSelected[$index],title,$index)">Modifica</button>
+                    <button type="button" class="btn btn-danger btn-lg " style="margin-top: 20px" ng-click="removeWork(work)">Rimuovi</button>
+                </div>
+
+
+            </div>
+
+
+
+
+
+        <div id="space-for-newDiv"></div>
+
+    </div>
+</div>

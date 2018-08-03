@@ -1,0 +1,29 @@
+<div class="row box" id="div_service_{{localCounter}} ">
+    <div class="col-md-3 text-center ">
+
+        <form>
+
+            <label class="btn btn-primary btn-lg buttonUpload" for="id_file_new_{{localCounter}}">Modifica Immagine </label>
+            <input id="id_file_new_{{localCounter}}"  type="file" ng-file-select="onFileSelect($files)" ng-model="newImageSrc" style="display: none" >
+
+        </form>
+        <img class="margin_top" style="width:200px; height:200px;" ng-src="{{newImageSrc}}" />
+
+    </div>
+    <div class="col-md-9">
+        <div class="description">
+            <label for="inputTitleNew">Titolo</label>
+            <input type="text" class="form-control" id="inputTitleNew" placeholder="Titolo"  ng-model="newTitle"  >
+        </div>
+
+        <div class="description">
+            <label for="inputContentNew">Contenuto</label>
+            <textarea id="inputContentNew" class="form-control" rows="5"  ng-model="newContent"></textarea>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-lg " style="margin-top: 20px" ng-click="addService(newImageSrc,newTitle,newContent)">Aggiungi</button>
+    <button type="button" class="btn btn-danger btn-lg " style="margin-top: 20px" ng-click="removeDiv(localCounter)">Chiudi</button>
+    <div id="bottomDiv"></div>
+
+</div>

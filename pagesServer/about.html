@@ -1,0 +1,59 @@
+<!-- about.html -->
+<div class="main_about text-center">
+    <h2 class="text-center">Modifica il profilo</h2>
+
+    <p>Puoi modificare o aggiungere il profilo nella sezione Chi Siamo</p>
+
+
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6">
+                <label for="fewDescription">Breve Descrizione</label>
+                <textarea id="fewDescription" class="form-control" rows="3" ng-model="description"></textarea>
+            </div>
+            <div class="col-md-2 fewDescription">
+                <button type="button" class="btn btn-primary btn-lg" ng-click="updateDescription()">Modifica</button>
+            </div>
+        </div>
+
+        <button class="btn  btn-primary btn-lg" ng-click="addDiv()"><i class="fa fa-plus mr-2"></i> Aggiungi</button>
+
+        <!--<div ng-repeat="profile in resultProfiles track by $index">-->
+            <div  ng-repeat="profile in resultProfiles track by $index" class="row box">
+                <div class="col-md-3 text-center ">
+
+                    <form>
+
+                        <label class="btn btn-primary btn-lg buttonUpload" for="id_file{{::$id}}">Modifica Immagine </label>
+                        <input id="id_file{{::$id}}"  type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc[$index]" style="display: none" >
+
+                    </form>
+                    <img class="margin_top" style="width:200px; height:200px;" ng-src="{{imageSrc[$index]}}" />
+
+                </div>
+                <div class="col-md-9">
+                    <div class="description">
+                    <label for="inputTitle">Titolo</label>
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Titolo" ng-model="title" ng-value="profile.title"  >
+                    </div>
+
+                    <div class="description">
+                    <label for="inputSubtitle">Sotto titolo</label>
+                    <input type="text" class="form-control" id="inputSubtitle" placeholder="Sotto titolo" ng-model="subtitle" ng-value="profile.subtitle">
+                    </div>
+                    <div class="description">
+                    <label for="inputContent">Contenuto/Biografia</label>
+                    <textarea id="inputContent" class="form-control" rows="5" ng-model="content" ng-value="profile.content"></textarea>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-lg " style="margin-top: 20px" ng-click="updateProfile(profile.id,imageSrc[$index],title,subtitle,content,$index)">Modifica</button>
+                <button type="button" class="btn btn-danger btn-lg " style="margin-top: 20px" ng-click="removeProfile(profile.id)">Rimuovi</button>
+            </div>
+
+
+        <div id="space-for-newDiv"></div>
+
+    </div>
+</div>

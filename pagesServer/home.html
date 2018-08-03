@@ -1,0 +1,75 @@
+
+<div class="main text-center">
+    <h2 class="text-center">Modifica la tua HomePage</h2>
+
+    <p>Puoi modificare le scritte in rotazione nella home page</p>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6  col-description">
+                <div class="description">
+                    <label for="inputDescription">Descrizione1*</label>
+                    <input type="text" class="form-control" id="inputDescription" placeholder="Descrizione" ng-model="desc1">
+                </div>
+                <div class="description">
+                    <label for="inputminiDescription">Mini Descrizione*</label>
+                    <input type="text" class="form-control" id="inputminiDescription" placeholder="Mini Descrizione" ng-model="minidesc1">
+
+                </div>
+
+                <button type="button" class=" btn btn-primary " ng-click="saveDescription(1)">Modifica</button>
+            </div>
+
+            <div class="col-md-6  col-description">
+                <div class="description">
+                    <label for="inputDescription1">Descrizione2*</label>
+                    <input type="text" class="form-control" id="inputDescription1" placeholder="Descrizione" ng-model="desc2">
+                </div>
+                <div class="description">
+                    <label for="inputminiDescription1">Mini Descrizione*</label>
+                    <input type="text" class="form-control" id="inputminiDescription1" placeholder="Mini Descrizione" ng-model="minidesc2">
+
+                </div>
+
+                <button type="button" class=" btn btn-primary " ng-click="saveDescription(2)">Modifica</button>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-description ">
+
+                <div class="description">
+                    <label for="inputDescription3">Descrizione3*</label>
+                    <input type="text" class="form-control" id="inputDescription3" placeholder="Descrizione" ng-model="desc3">
+                </div>
+                <div class="description">
+                    <label for="inputminiDescription3">Mini Descrizione*</label>
+                    <input type="text" class="form-control" id="inputminiDescription3" placeholder="Mini Descrizione" ng-model="minidesc3">
+
+                </div>
+
+                <button type="button" class=" btn btn-primary " ng-click="saveDescription(3)">Modifica</button>
+            </div>
+
+            <div class="col-md-6  col-description disabledDiv ">
+
+                <div class="description disabled">
+                    <label for="inputDescription4">Descrizione4</label>
+                    <input type="text" class="form-control" id="inputDescription4" placeholder="Descrizione" ng-model="desc4">
+                </div>
+                <div class="description">
+                    <label for="inputminiDescription4">Mini Descrizione</label>
+                    <input type="text" class="form-control" id="inputminiDescription4" placeholder="Mini Descrizione" ng-model="minidesc4">
+
+                </div>
+
+                <button type="button" class=" btn btn-primary " ng-click="saveDescription(4)" >Modifica</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>

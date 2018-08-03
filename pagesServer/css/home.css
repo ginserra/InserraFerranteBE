@@ -1,0 +1,36 @@
+.main{
+    padding: 20px;
+    width: 96%;
+    height: 83%;
+    background: #EEEEEE;
+    margin: 30px;
+
+}
+.main >h2{
+    color: #286090;
+}
+.imageHome{
+    width:250px;
+    height: 130px;
+    margin-bottom: 15px;
+}
+.description{
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.col-description{
+    border: 1px solid #d6d4d4;
+    border-radius: 5px;
+    padding: 10px;
+    width: 45%;
+    margin: 10px;
+    background: #a1a2a3;
+}
+label{
+    float: left;
+}
+.disabledDiv {
+    pointer-events: none;
+    opacity: 0.4;
+}

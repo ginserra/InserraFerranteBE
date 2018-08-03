@@ -1,0 +1,24 @@
+<md-dialog class="dialog-icon" style="position:fixed;" aria-label="Scegli l'icona">
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Scegli l'icona <i class="fa {{type.icon}}"></i></h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon class="fa fa-close" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <table>
+                <tr data-ng-repeat="row in tableData">
+                    <td data-ng-repeat="icon in row">
+                        <i class="fa {{icon}} fa-3x" ng-click="clickIcon(icon)" ></i>
+                    </td>
+                </tr>
+            </table>
+
+        </md-dialog-content>
+
+</md-dialog>
