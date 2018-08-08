@@ -5,9 +5,13 @@
     <link href="pagesServer/css/home.css" rel="stylesheet" media="screen">
     <link href="pagesServer/css/about.css" rel="stylesheet" media="screen">
     <link href="pagesServer/css/work.css" rel="stylesheet" media="screen">
+
+
     <link href="pagesServer/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.6/angular-material.min.css">
+    <link href="pagesServer/css/blog.css" rel="stylesheet" media="screen">
+    <link href="pagesServer/css/register.css" rel="stylesheet" media="screen">
 
 
 </head>
@@ -24,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Gestione Sito</a>
+                <a class="navbar-brand" href="#">Gestione Sito</a>
             </div>
             <div class="collapse navbar-collapse" id="bs1">
 
@@ -33,6 +37,7 @@
                     <li><a href="#!/about"><i class="fa fa-user"></i> Chi Siamo</a></li>
                     <li><a href="#!/servizi"><i class="fa fa-cogs"></i> Servizi</a></li>
                     <li><a href="#!/works"><i class="fa fa-crop"></i> Works</a></li>
+                    <li><a href="#!/blog"><i class="fa fa-edit"></i> Blog</a></li>
                     <li><a href="#!/contact"><i class="fa fa-comments"></i> Contact</a></li>
                     <li><a href="#!/login"><i class="fa fa-sign-out"></i> Esci</a></li>
                 </ul>
@@ -60,8 +65,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-aria.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-messages.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-cookies.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.6.1/angular-touch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.7.2/angular-locale_it-it.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.6/angular-material.min.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.3.js"></script>
 
 
 <script src="pagesServer/js/jquery.js"></script>
@@ -79,11 +86,13 @@
 <script src="pagesServer/controllers/aboutController.js"></script>
 <script src="pagesServer/controllers/servicesController.js"></script>
 <script src="pagesServer/controllers/workController.js"></script>
+<script src="pagesServer/controllers/blogController.js"></script>
 <script src="pagesServer/modules/homeservices.js"></script>
 <script src="pagesServer/modules/aboutservices.js"></script>
 <script src="pagesServer/modules/servicesservices.js"></script>
 <script src="pagesServer/modules/workservices.js"></script>
 <script src="pagesServer/modules/userservices.js"></script>
+<script src="pagesServer/modules/blogservices.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!-- about.html -->
+<div class="main_about text-center">
+
+    <div>
+        <md-switch ng-model="enableBlog" aria-label="myBlog" ng-change="onChangeSwitch(enableBlog)">
+            {{valueEnable}}
+        </md-switch>
+    </div>
+
+<div ng-class="{'my-disable':!enableBlog}">
+
+    <h2 class="text-center">Modifica la sezione del tuo Blog</h2>
+
+    <p>Puoi modificare o aggiungere discussioni nel tuo blog</p>
+
+
+
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6">
+                <label for="fewDescription">Breve Descrizione</label>
+                <textarea id="fewDescription" class="form-control" rows="3" ng-model="description"></textarea>
+            </div>
+            <div class="col-md-2 fewDescription">
+                <button type="button" class="btn btn-primary btn-lg" ng-click="updateDescription()">Modifica</button>
+            </div>
+        </div>
+
+        <button class="btn  btn-primary btn-lg" ng-click="addDiv()"><i class="fa fa-plus mr-2"></i> Aggiungi</button>
+
+        <!--<div ng-repeat="profile in resultProfiles track by $index">-->
+        <div  ng-repeat="blog in resultBlogs track by $index" class="row box">
+            <div class="row">
+                <div class="col-md-4 text-center ">
+                    <p>Pubblicato in data: <b>{{blog.data}}</b></p>
+                </div>
+                <div class="col-md-5 "> </div>
+                <div class="col-md-3 comments-badge ">
+                    <a href="#">Commenti <span class="badge">{{blog.n_comments}}</span></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-center ">
+
+                    <form>
+
+                        <label class="btn btn-primary btn-lg buttonUpload" for="id_file{{::$id}}">Modifica Immagine </label>
+                        <input id="id_file{{::$id}}"  type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc[$index]" style="display: none" >
+
+                    </form>
+                    <img class="margin_top" style="width:200px; height:200px;" ng-src="{{imageSrc[$index]}}" />
+
+                </div>
+                <div class="col-md-9">
+                    <div class="description">
+                        <label for="inputTitle">Titolo</label>
+                        <input type="text" class="form-control" id="inputTitle" placeholder="Titolo" ng-model="title" ng-value="blog.title"  >
+                    </div>
+
+                    <div class="description">
+                        <label for="inputContent">Contenuto</label>
+                        <textarea id="inputContent" class="form-control" rows="5" ng-model="content" ng-value="blog.content"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg " style="margin-top: 20px" ng-click="updateBlog(blog.id,imageSrc[$index],title,content,$index)">Modifica</button>
+            <button type="button" class="btn btn-danger btn-lg " style="margin-top: 20px" ng-click="removeBlog(service.id)">Rimuovi</button>
+        </div>
+
+        <div id="space-for-newDiv"></div>
+
+    </div>
+    <div>
+</div>

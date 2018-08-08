@@ -1,4 +1,4 @@
-angular.module('appServer', ['ngRoute', 'ngMaterial','ngCookies'])
+angular.module('appServer', ['ngRoute', 'ngMaterial','ngCookies','ui.bootstrap'])
     .constant("addressServer", "http://localhost/server1/php_server/")
     .config(config)
     .run(run);
@@ -33,6 +33,10 @@ function config($routeProvider, $locationProvider) {
         .when('/works', {
             templateUrl : 'pagesServer/work.html',
             controller  : 'workController'
+        })
+        .when('/blog', {
+            templateUrl : 'pagesServer/blog.html',
+            controller  : 'blogController'
         })
         .when('/login', {
             templateUrl : 'pagesServer/login.html',

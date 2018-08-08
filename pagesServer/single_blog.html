@@ -1,0 +1,46 @@
+
+
+<div class="row box" id="div_blog_{{localCounter}}" >
+    <div class="row">
+        <div class="col-md-3 text-center ">
+
+            <form>
+
+                <label class="btn btn-primary btn-lg buttonUpload" for="id_file_new_{{localCounter}}">Modifica Immagine </label>
+                <input id="id_file_new_{{localCounter}}"  type="file" ng-file-select="onFileSelect($files)" ng-model="newImageSrc" style="display: none" >
+
+            </form>
+            <img class="margin_top" style="width:200px; height:200px;" ng-src="{{newImageSrc}}" />
+
+        </div>
+
+        <div class="col-md-9">
+            <div class="description">
+                <label for="inputTitleNew">Titolo</label>
+                <input type="text" class="form-control" id="inputTitleNew" placeholder="Titolo"  ng-model="newTitle"  >
+            </div>
+
+            <div class="description">
+                <label for="inputContentNew">Contenuto</label>
+                <textarea id="inputContentNew" class="form-control" rows="5"  ng-model="newContent"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 text-center"  style="margin-top: 20px">
+            <p class="input-group">
+                <input style="border-radius: 5px;" type="text" readonly class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <span class="input-group-btn">
+            <button type="button" class="btn btn-default bt-calendar" ng-click="open1()"><i class="fa fa-calendar"></i></button>
+          </span>
+            </p>
+        </div>
+        <div class="col-md-8"  style="margin-top: 20px">
+            <button type="button" class="btn btn-primary btn-lg " ng-click="addBlog(newImageSrc,newTitle,newContent,dt)">Aggiungi</button>
+            <button type="button" class="btn btn-danger btn-lg "  ng-click="removeDiv(localCounter)">Chiudi</button>
+        </div>
+    </div>
+
+    <div id="bottomDiv"></div>
+
+</div>

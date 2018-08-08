@@ -27,9 +27,9 @@
     margin: 10px;
     background: #a1a2a3;
 }
-label{
-    float: left;
-}
+/*label{*/
+    /*float: left;*/
+/*}*/
 .disabledDiv {
     pointer-events: none;
     opacity: 0.4;

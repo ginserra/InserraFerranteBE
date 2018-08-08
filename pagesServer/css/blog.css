@@ -1,0 +1,31 @@
+.full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+}
+.partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+}
+.btn-default{
+    background-color: white!important;
+    color:black!important;
+}
+.bt-calendar{
+    border-radius: 5px!important;
+    height: 27px;
+    margin-left: 8px!important;
+}
+.comments-badge{
+    color:#3f729b;
+    text-align: right;
+}
+.badge{
+    background-color: white!important;
+    color: black!important;
+}
+.my-disable{
+    pointer-events:none;
+    opacity: 0.5;
+}

@@ -1,6 +1,6 @@
 angular.module('appServer')
-    .controller('aboutController', ['$scope', '$http', 'fileReader', '$timeout', '$compile', '$location', '$anchorScroll', 'aboutServices',
-        function ($scope, $http, fileReader, $timeout, $compile, $location, $anchorScroll, aboutServices) {
+    .controller('aboutController', ['$scope', '$http', 'fileReader', '$timeout', '$compile', '$location', '$anchorScroll', 'aboutServices','$document',
+        function ($scope, $http, fileReader, $timeout, $compile, $location, $anchorScroll, aboutServices,$document) {
 
             // console.log("CIAO ABOUT");
 
@@ -154,7 +154,7 @@ angular.module('appServer')
         };
     })
 
-    .directive('profilediv', function ($location, $anchorScroll, $http, $window, aboutServices) {
+    .directive('profilediv', function ($location, $anchorScroll, $http, $window, aboutServices,$document) {
         return {
             scope: {
                 counter: '=',
@@ -170,10 +170,14 @@ angular.module('appServer')
                 $scope.localCounter = $scope.counter;
 
                 $scope.removeDiv = function (counterToRemove) {
-                    // console.log("REM");
-                    // console.log("counter centrale--->: " + $scope.counter + "----cremove" + counterToRemove);
-                    var myEl = angular.element(document.querySelector('#div_profile_' + counterToRemove));
-                    myEl.remove();   //removes element
+                    // console.log("doc--",document.getElementById('#div_profile_' + counterToRemove));
+                    // var e=angular.element($document[0].querySelector('#div_profile_' + counterToRemove));
+                    // // console.log("counter centrale--->: " + $scope.counter + "----cremove" + counterToRemove);
+                    // // var myEl = angular.element(document.querySelector('#div_profile_' + counterToRemove));
+                    // e.remove();   //removes element
+
+                    var iEl = angular.element( document.querySelector( '#div_profile_'+ counterToRemove ) );
+                    iEl.remove();
                 };
 
                 $scope.addProfile = function (image, title, subtitle, content) {

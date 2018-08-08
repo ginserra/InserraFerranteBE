@@ -1,25 +1,82 @@
-<div class="col-md-6 col-md-offset-3">
-    <h2>Registrazione</h2>
+<!--<div class="col-md-6 col-md-offset-3">-->
 
 
-        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username è obbligatoria</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" class="form-control" ng-model="email" required />
-            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Email è obbligatoria</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password è obbligatoria</span>
-        </div>
-        <div class="form-actions">
-            <button  ng-disabled="dataLoading" ng-click="register()" class="btn btn-primary">Register</button>
-            <a href="#!/login" class="btn btn-link">Cancel</a>
+
+        <!--<div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">-->
+            <!--<label for="username">Username</label>-->
+            <!--<input type="text" name="username" id="username" class="form-control" ng-model="username" required />-->
+            <!--<span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username è obbligatoria</span>-->
+        <!--</div>-->
+        <!--<div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">-->
+            <!--<label for="email">Email</label>-->
+            <!--<input type="text" name="email" id="email" class="form-control" ng-model="email" required />-->
+            <!--<span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Email è obbligatoria</span>-->
+        <!--</div>-->
+        <!--<div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">-->
+            <!--<label for="password">Password</label>-->
+            <!--<input type="password" name="password" id="password" class="form-control" ng-model="password" required />-->
+            <!--<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password è obbligatoria</span>-->
+        <!--</div>-->
+        <!--<div class="form-actions">-->
+            <!--<button  ng-click="register()" class="btn btn-primary">Register</button>-->
+            <!--<a href="#!/login" class="btn btn-link">Cancel</a>-->
+        <!--</div>-->
+        <!--<div>-->
+        	 <!--<p ng-repeat="error in errorsRegistration" style="color:red">{{error}}</p>-->
+        <!--</div>-->
+       <!---->
+
+<!--</div>-->
+
+<div class="centerDiv">
+
+    <div  class="main-login">
+        <h2>Registrazione</h2>
+        <form name="form" ng-submit="register()" role="form">
+
+
+            <div class="form-group">
+                <label for="name" class="cols-sm-2 control-label labelReg">Username</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <input ng-model="username" type="text" class="form-control" name="name" id="name"  placeholder="Inserisci la tua username" required/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="cols-sm-2 control-label labelReg">Email</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                        <input ng-model="email" type="text" class="form-control" name="email" id="email"  placeholder="Inserisci la tua email" required/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="cols-sm-2 control-label labelReg">Password</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <input ng-model="password" type="password" class="form-control" name="password" id="password"  placeholder="Inserisci la password" required/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Registrati</button>
+            </div>
+            <div class="login-register">
+                <a href="#!/login" class="btn btn-link">Cancel</a>
+            </div>
+
+        </form>
+        <div>
+        <p ng-repeat="error in errorsRegistration" style="color:red">{{error}}</p>
         </div>
 
+    </div>
 </div>
+

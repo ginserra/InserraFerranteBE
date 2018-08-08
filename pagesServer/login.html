@@ -1,21 +1,35 @@
-<div class="col-md-6 col-md-offset-3">
+
+<div class="centerDiv">
+
+    <div  class="main-login">
+        <h2>Login</h2>
+
     <form name="form" ng-submit="login()" role="form">
 
-        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">L'username è obbligatoria </span>
+        <div class="form-group">
+            <label for="name" class="cols-sm-2 control-label labelReg">Username</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input ng-model="username" type="text" class="form-control" name="name" id="name"  placeholder="Inserisci la tua username" required/>
+                </div>
+            </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">La password è obbligatoria </span>
+        <div class="form-group">
+            <label for="password" class="cols-sm-2 control-label labelReg">Password</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <input ng-model="password" type="password" class="form-control" name="password" id="password"  placeholder="Inserisci la password" required/>
+                </div>
+            </div>
         </div>
         <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Login</button>
             <a href="#!/register" class="btn btn-link">Registrati</a>
 
         </div>
     </form>
-    <p>{{errorLogin}}</p>
+    <p style="color:red">{{errorLogin}}</p>
+    </div>
 </div>
