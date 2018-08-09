@@ -7,7 +7,6 @@ config.$inject = ['$routeProvider', '$locationProvider'];
 
 function config($routeProvider, $locationProvider) {
 
-    console.log("QUIIIII");
     $routeProvider
     // route for the home page
         .when('/', {

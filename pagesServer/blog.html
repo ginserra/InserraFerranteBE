@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-5 "> </div>
                 <div class="col-md-3 comments-badge ">
-                    <a href="#">Commenti <span class="badge">{{blog.n_comments}}</span></a>
+                    <a ng-click="showComments($event,blog)">Commenti <span class="badge">{{blog.n_comments}}</span></a>
                 </div>
             </div>
             <div class="row">
@@ -47,6 +47,7 @@
 
                         <label class="btn btn-primary btn-lg buttonUpload" for="id_file{{::$id}}">Modifica Immagine </label>
                         <input id="id_file{{::$id}}"  type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc[$index]" style="display: none" >
+                        <span> <button class="btn  btn-danger btn-lg" ng-click="removeImage($index)"><i class="fa fa-trash mr-2"></i></button></span>
 
                     </form>
                     <img class="margin_top" style="width:200px; height:200px;" ng-src="{{imageSrc[$index]}}" />
@@ -66,7 +67,7 @@
             </div>
 
             <button type="button" class="btn btn-primary btn-lg " style="margin-top: 20px" ng-click="updateBlog(blog.id,imageSrc[$index],title,content,$index)">Modifica</button>
-            <button type="button" class="btn btn-danger btn-lg " style="margin-top: 20px" ng-click="removeBlog(service.id)">Rimuovi</button>
+            <button type="button" class="btn btn-danger btn-lg " style="margin-top: 20px" ng-click="removeBlog(blog)">Rimuovi</button>
         </div>
 
         <div id="space-for-newDiv"></div>
